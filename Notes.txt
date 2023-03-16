@@ -1,0 +1,5 @@
+RESTUARANT APP
+
+1.npx create-react-app
+2.npm install react-bootstrap bootstrap
+3.Select theme from bootswatch and paste min.css file in src

@@ -1,0 +1,52 @@
+.viewrest-page {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.viewrest-container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.image-card img {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.restaurant-image {
+  width: 100%;
+  max-height: 600px; /* Default small size */
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.restaurant-image:hover {
+  transform: scale(1.02);
+}
+
+
+.image-card img {
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.image-card img:hover {
+  transform: scale(1.03);
+}
+
+.restaurant-details {
+  background: white;
+}
+
+.operating-hours {
+  background: #fff3cd;
+  border-left: 5px solid #ffc107;
+}
+
+.reviews-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+}

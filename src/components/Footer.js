@@ -1,71 +1,49 @@
-import React from 'react'
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <div>
-    <footer class="footer-distributed">
-    
-                <div class="footer-left">
-    
-                    <h3>Company<span>logo</span></h3>
-    
-                    <p class="footer-links">
-                        {/* <a  class="link-1">Home</a>
-                        
-                        <a >Blog</a>
-                    
-                        <a >Pricing</a>
-                    
-                        <a >About</a>
-                        
-                        <a >Faq</a>
-                        
-                        <a >Contact</a> */}
-                    </p>
-    
-                    <p class="footer-company-name">Company Name © 2015</p>
-                </div>
-    
-                <div class="footer-center">
-    
-                    <div>
-                        <i class="fa fa-map-marker"></i>
-                        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-                    </div>
-    
-                    <div>
-                        <i class="fa fa-phone"></i>
-                        <p>+1.555.555.5555</p>
-                    </div>
-    
-                    <div>
-                        <i class="fa fa-envelope"></i>
-                        {/* <p><a >support@company.com</a></p> */}
-                    </div>
-    
-                </div>
-    
-                <div class="footer-right">
-    
-                    <p class="footer-company-about">
-                        <span>About the company</span>
-                        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-                    </p>
-    
-                    <div class="footer-icons">
-{/*     
-                        <a ><i class="fa fa-facebook"></i></a>
-                        <a ><i class="fa fa-twitter"></i></a>
-                        <a ><i class="fa fa-linkedin"></i></a>
-                        <a ><i class="fa fa-github"></i></a> */}
-    
-                    </div>
-    
-                </div>
-    
-            </footer></div>
-  )
+    <footer className="footer-modern">
+      <div className="footer-container">
+
+        {/* Left Section */}
+        <div className="footer-section footer-left">
+          <h3>Flavor<span>Haven</span></h3>
+          <p className="footer-company-name">© {new Date().getFullYear()} Flavor Haven</p>
+        </div>
+
+        {/* Center Section */}
+        <div className="footer-section footer-center">
+          <div>
+            <FaMapMarkerAlt className="footer-icon"/>
+            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+          </div>
+          <div>
+            <FaPhoneAlt className="footer-icon"/>
+            <p>+1 555 555 5555</p>
+          </div>
+          <div>
+            <FaEnvelope className="footer-icon"/>
+            <p>support@flavorhaven.com</p>
+          </div>
+        </div>
+
+        {/* Right Section */}
+        <div className="footer-section footer-right">
+          <p className="footer-about">
+            Savor the taste of authentic dishes, crafted with love. Follow us on social media for updates and offers!
+          </p>
+          <div className="footer-socials">
+            <a href="/home"><FaFacebookF /></a>
+            <a href="/home"><FaTwitter /></a>
+            <a href="/home"><FaInstagram /></a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

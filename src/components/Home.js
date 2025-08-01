@@ -1,48 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import Restcard from './Restcard'
-import { Row } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import Restcard from './Restcard';
+import { Row, Container } from 'react-bootstrap';
 import { RestListAction } from '../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Home() {
+  const dispatch = useDispatch();
+  const result = useSelector((state) => state.reducer);
+  const { restList } = result;
 
-    const [AllRestaurants, setAllRestaurants] = useState([])
+  useEffect(() => {
+    dispatch(RestListAction());
+  }, [dispatch]);
 
-    // function to call api to get data
-
-    const getRestaurants = async () => {
-        await fetch('./restaurants.json').then(
-            (data) => {
-                data.json().then(
-                    (result) => {
-                        setAllRestaurants(result.restaurants)
-                    }
-                )
-            }
-        )
-    }
-
-    const dispatch = useDispatch();
-    const result = useSelector(state=>state.reducer)
-    console.log(result)
-    const {restList} = result;
-
-    useEffect(() => {
-        // getRestaurants()
-        dispatch(RestListAction())
-    }, [])
-
-    return (
-        
-                <Row>
-                    {
-                        restList?.map((item) => (
-                            <Restcard restaurant={item} />
-                        ))
-                    }
-                </Row>
-         
-    )
+  return (
+    <Container className="my-5">
+      <Row className="g-4 justify-content-center">
+        {restList?.map((item, index) => (
+          <Restcard key={index} restaurant={item} />
+        ))}
+      </Row>
+    </Container>
+  );
 }
 
-export default Home
+export default Home;
